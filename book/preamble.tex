@@ -1,0 +1,114 @@
+% --- Paquetes de Idioma y Codificación ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel} % es-tabla para que diga "Tabla" en lugar de "Cuadro"
+
+% --- Tipografía ---
+\usepackage{mathpazo} % Fuente Palatino (más elegante)
+\usepackage[scaled=0.85]{beramono} % Fuente monoespaciada agradable
+
+% --- Diseño de Página ---
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=25mm,
+ top=25mm,
+ bottom=25mm,
+ right=25mm,
+}
+
+% --- Gráficos y Colores ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz} % Para gráficos avanzados y decoraciones
+\usetikzlibrary{calc} % Para cálculos de coordenadas
+
+
+% Definición de colores modernos
+\definecolor{primaryColor}{RGB}{0, 102, 204} % Azul profesional
+\definecolor{secondaryColor}{RGB}{50, 50, 50} % Gris oscuro
+\definecolor{codeBackground}{RGB}{245, 245, 245}
+\definecolor{codeComment}{RGB}{80, 161, 79}
+\definecolor{codeKeyword}{RGB}{166, 38, 164}
+\definecolor{codeString}{RGB}{80, 161, 79}
+\definecolor{codeNumber}{RGB}{152, 104, 1}
+
+% --- Estilo de Capítulos ---
+\usepackage[Lenny]{fncychap} % Estilos de capítulo predefinidos (Sonny, Lenny, Glenn, Conny, Rejne, Bjarne)
+\ChNameUpperCase
+\ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont}
+\ChTitleVar{\Huge\bfseries\rmfamily}
+
+% --- Encabezados y Pies de Página ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- Código Fuente ---
+\usepackage{listings}
+\usepackage{caption}
+
+\DeclareCaptionFormat{listing}{\rule{\dimexpr\textwidth\relax}{0.4pt}\par\vskip1pt#1#2#3}
+\captionsetup[lstlisting]{format=listing, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+\lstdefinestyle{beautifulStyle}{
+    backgroundcolor=\color{codeBackground},   
+    commentstyle=\color{codeComment}\itshape,
+    keywordstyle=\color{codeKeyword}\bfseries,
+    numberstyle=\tiny\color{secondaryColor},
+    stringstyle=\color{codeString},
+    basicstyle=\ttfamily\footnotesize\color{secondaryColor},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=t,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=10pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    frame=l, % Línea a la izquierda
+    framesep=5pt,
+    framerule=2pt,
+    rulecolor=\color{primaryColor},
+    xleftmargin=15pt,
+}
+
+\lstset{style=beautifulStyle}
+
+% Definición de lenguaje JavaScript
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, class, const, continue, debugger, default, delete, do, else, enum, export, extends, false, finally, for, function, if, import, in, instanceof, new, null, return, super, switch, this, throw, true, try, typeof, var, void, while, with, let, yield},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{codeKeyword}\bfseries,
+  ndkeywordstyle=\color{codeKeyword}\bfseries,
+  identifierstyle=\color{secondaryColor},
+  commentstyle=\color{codeComment}\itshape,
+  stringstyle=\color{codeString}\ttfamily,
+  sensitive=true
+}
+
+% --- Hipervínculos ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryColor,
+    filecolor=magenta,      
+    urlcolor=primaryColor,
+    pdftitle={Compendio de Ciencias de la Computación},
+    pdfpagemode=FullScreen,
+}
+
+% --- Otros ---
+\usepackage{parskip} % Espacio entre párrafos en lugar de sangría

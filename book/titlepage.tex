@@ -1,0 +1,48 @@
+\begin{titlepage}
+    \begin{tikzpicture}[remember picture, overlay]
+        % Marco exterior elegante
+        \draw[line width=2pt, color=primaryColor] 
+            ($(current page.north west) + (2cm,-2cm)$) 
+            rectangle 
+            ($(current page.south east) + (-2cm,2cm)$);
+        
+        % Marco interior fino
+        \draw[line width=0.5pt, color=secondaryColor] 
+            ($(current page.north west) + (2.2cm,-2.2cm)$) 
+            rectangle 
+            ($(current page.south east) + (-2.2cm,2.2cm)$);
+            
+        % Detalles en las esquinas
+        \fill[primaryColor] ($(current page.north west) + (2cm,-2cm)$) rectangle ++(0.5cm,-0.5cm);
+        \fill[primaryColor] ($(current page.north east) + (-2cm,-2cm)$) rectangle ++(-0.5cm,-0.5cm);
+        \fill[primaryColor] ($(current page.south west) + (2cm,2cm)$) rectangle ++(0.5cm,0.5cm);
+        \fill[primaryColor] ($(current page.south east) + (-2cm,2cm)$) rectangle ++(-0.5cm,0.5cm);
+    \end{tikzpicture}
+    
+    \centering
+    \vspace*{1.5cm}
+    
+    {\scshape\LARGE Notas de Estudio \par}
+    \vspace{1cm}
+    
+    {\scshape\Large Ciencias de la Computación \par}
+    \vspace{3cm}
+    
+    {\fontsize{35}{40}\selectfont \bfseries \color{primaryColor} Ciencias de la Computación \par}
+    \vspace{0.5cm}
+    {\fontsize{35}{30}\selectfont \bfseries \color{secondaryColor} y Programación \par}
+    
+    \vspace{1.5cm}
+    {\color{primaryColor}\rule{1.0\textwidth}{1pt}}
+    \vspace{1.5cm}
+
+    
+    {\Large \itshape Una guía de estudio personal y referencia técnica \par}
+    
+    \vfill
+    
+    {\Large \textbf{Autor:} Benjamin Figueroa Guzman \par}
+    \vspace{0.5cm}
+    {\large \today \par}
+    \vspace{3cm}
+\end{titlepage}
